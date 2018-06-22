@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\wagepan_labels.txt
+  log type:  text
+ opened on:  17 Aug 2017, 13:13:20
+
+. use C:\Users\Jason\Desktop\data\wagepan.dta, clear
+
+. describe
+
+Contains data from C:\Users\Jason\Desktop\data\wagepan.dta
+  obs:         4,360                          
+ vars:            44                          17 Aug 1999 23:55
+ size:       222,360                          
+---------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+---------------------------------------------------------------------------------------------------
+nr              int     %9.0g                 person identifier
+year            int     %9.0g                 1980 to 1987
+agric           byte    %9.0g                 =1 if in agriculture
+black           byte    %9.0g                 =1 if black
+bus             byte    %9.0g                 
+construc        byte    %9.0g                 =1 if in construction
+ent             byte    %9.0g                 
+exper           byte    %9.0g                 labor mkt experience
+fin             byte    %9.0g                 
+hisp            byte    %9.0g                 =1 if Hispanic
+poorhlth        byte    %9.0g                 =1 if in poor health
+hours           int     %9.0g                 annual hours worked
+manuf           byte    %9.0g                 =1 if in manufacturing
+married         byte    %9.0g                 =1 if married
+min             byte    %9.0g                 
+nrthcen         byte    %9.0g                 =1 if north central
+nrtheast        byte    %9.0g                 =1 if north east
+occ1            byte    %9.0g                 
+occ2            byte    %9.0g                 
+occ3            byte    %9.0g                 
+occ4            byte    %9.0g                 
+occ5            byte    %9.0g                 
+occ6            byte    %9.0g                 
+occ7            byte    %9.0g                 
+occ8            byte    %9.0g                 
+occ9            byte    %9.0g                 
+per             byte    %9.0g                 
+pro             byte    %9.0g                 
+pub             byte    %9.0g                 
+rur             byte    %9.0g                 
+south           byte    %9.0g                 =1 if south
+educ            byte    %9.0g                 years of schooling
+tra             byte    %9.0g                 
+trad            byte    %9.0g                 
+union           byte    %9.0g                 =1 if in union
+lwage           float   %9.0g                 log(wage)
+d81             byte    %9.0g                 =1 if year == 1981
+d82             byte    %9.0g                 
+d83             byte    %9.0g                 
+d84             byte    %9.0g                 
+d85             byte    %9.0g                 
+d86             byte    %9.0g                 
+d87             byte    %9.0g                 
+expersq         int     %9.0g                 exper^2
+---------------------------------------------------------------------------------------------------
+Sorted by: nr
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\wagepan_labels.txt
+  log type:  text
+ closed on:  17 Aug 2017, 13:13:20
+---------------------------------------------------------------------------------------------------

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\phillips_labels.txt
+  log type:  text
+ opened on:  17 Aug 2017, 13:13:20
+
+. use C:\Users\Jason\Desktop\data\phillips.dta, clear
+
+. describe
+
+Contains data from C:\Users\Jason\Desktop\data\phillips.dta
+  obs:            56                          
+ vars:             7                          29 Jul 2005 11:58
+ size:         1,456                          
+---------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+---------------------------------------------------------------------------------------------------
+year            int     %9.0g                 1948 through 2003
+unem            float   %9.0g                 civilian unemployment rate, %
+inf             float   %9.0g                 percentage change in CPI
+inf_1           float   %9.0g                 inf[_n-1]
+unem_1          float   %9.0g                 unem[_n-1]
+cinf            float   %9.0g                 inf - inf_1
+cunem           float   %9.0g                 unem - unem_1
+---------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\phillips_labels.txt
+  log type:  text
+ closed on:  17 Aug 2017, 13:13:20
+---------------------------------------------------------------------------------------------------

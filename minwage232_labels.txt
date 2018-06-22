@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\minwage_labels.txt
+  log type:  text
+ opened on:  17 Aug 2017, 13:13:20
+
+. use C:\Users\Jason\Desktop\data\minwage.dta, clear
+
+. describe
+
+Contains data from C:\Users\Jason\Desktop\data\minwage.dta
+  obs:           612                          
+ vars:            58                          25 Feb 2008 11:46
+ size:       140,760                          
+---------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+---------------------------------------------------------------------------------------------------
+emp232          float   %9.0g                 employment, sector 232, 1000s
+wage232         float   %9.0g                 hourly wage, sector 232, $
+unem            float   %9.0g                 civilian unemployment rate, %
+cpi             float   %9.0g                 Consumer Price Index (urban), 1982-1984 = 100
+minwage         float   %8.0g                 Federal minimum wage, $/hour
+---------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\minwage_labels.txt
+  log type:  text
+ closed on:  17 Aug 2017, 13:13:20
+---------------------------------------------------------------------------------------------------

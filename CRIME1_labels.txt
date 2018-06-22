@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\CRIME1_labels.txt
+  log type:  text
+ opened on:  17 Aug 2017, 13:13:20
+
+. use C:\Users\Jason\Desktop\data\CRIME1.DTA, clear
+
+. describe
+
+Contains data from C:\Users\Jason\Desktop\data\CRIME1.DTA
+  obs:         2,725                          
+ vars:            16                          6 Nov 1996 10:54
+ size:       111,725                          
+---------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+---------------------------------------------------------------------------------------------------
+narr86          byte    %9.0g                 # times arrested, 1986
+nfarr86         byte    %9.0g                 # felony arrests, 1986
+nparr86         byte    %9.0g                 # property crme arr., 1986
+pcnv            float   %9.0g                 proportion of prior convictions
+avgsen          float   %9.0g                 avg sentence length, mos.
+tottime         float   %9.0g                 time in prison since 18 (mos.)
+ptime86         byte    %9.0g                 mos. in prison during 1986
+qemp86          float   %9.0g                 # quarters employed, 1986
+inc86           float   %9.0g                 legal income, 1986, $100s
+durat           float   %9.0g                 recent unemp duration
+black           byte    %9.0g                 =1 if black
+hispan          byte    %9.0g                 =1 if Hispanic
+born60          byte    %9.0g                 =1 if born in 1960
+---------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\CRIME1_labels.txt
+  log type:  text
+ closed on:  17 Aug 2017, 13:13:20
+---------------------------------------------------------------------------------------------------

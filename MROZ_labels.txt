@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\MROZ_labels.txt
+  log type:  text
+ opened on:  17 Aug 2017, 13:13:20
+
+. use C:\Users\Jason\Desktop\data\MROZ.DTA, clear
+
+. describe
+
+Contains data from C:\Users\Jason\Desktop\data\MROZ.DTA
+  obs:           753                          
+ vars:            22                          2 Mar 1999 11:30
+ size:        36,897                          
+---------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+---------------------------------------------------------------------------------------------------
+inlf            byte    %9.0g                 =1 if in lab frce, 1975
+hours           int     %9.0g                 hours worked, 1975
+kidslt6         byte    %9.0g                 # kids < 6 years
+kidsge6         byte    %9.0g                 # kids 6-18
+age             byte    %9.0g                 woman's age in yrs
+educ            byte    %9.0g                 years of schooling
+wage            float   %9.0g                 est. wage from earn, hrs
+repwage         float   %9.0g                 rep. wage at interview in 1976
+hushrs          int     %9.0g                 hours worked by husband, 1975
+husage          byte    %9.0g                 husband's age
+huseduc         byte    %9.0g                 husband's years of schooling
+huswage         float   %9.0g                 husband's hourly wage, 1975
+faminc          float   %9.0g                 family income, 1975
+mtr             float   %9.0g                 fed. marg. tax rte facing woman
+motheduc        byte    %9.0g                 mother's years of schooling
+fatheduc        byte    %9.0g                 father's years of schooling
+unem            float   %9.0g                 unem. rate in county of resid.
+city            byte    %9.0g                 =1 if live in SMSA
+exper           byte    %9.0g                 actual labor mkt exper
+---------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\Jason\Desktop\data2\MROZ_labels.txt
+  log type:  text
+ closed on:  17 Aug 2017, 13:13:20
+---------------------------------------------------------------------------------------------------
