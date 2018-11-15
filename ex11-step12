@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Minke_Li-D3 Viz</title>
+<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+<style type="text/css">
+
+body{
+     background-color:lightgrey <!-- Use LIGHTGREY color -->
+    }
+svg{
+     background-color:white <!-- Use WHITE color -->
+    }
+.axis path,
+.axis line{
+            fill:none;
+            stroke:black;
+            shape-rendering:crispEdge;
+           }
+.axis text{
+            font-family:sans-serif;
+            font-size:11px;
+           }
+</style>
+
+</head>
+<body>
+
+<!-- Add a division, center alighed-->
+
+<div align="center"></div>
+
+<!-- Add SVG File -->
+<script type="text/javascript">
+  var w = 800;
+  var h = 600;
+  var padding = [30,10,20,150] //[Top, Right Bottom, Left]
+  //Set Bar Padding
+  var barPadding = 12;
+  var widthScale = d3.scale.linear()
+                      .range([0,w - padding[1]-padding[3]]);
+  var heightScale = d3.scale.ordinal()
+                      .rangeRoundBands([padding[0], h-padding[2] ],0.1);
+  var xAxis = d3.svg.axis()
+      .scale(widthScale)
+      .orient("bottom")
+      .ticks(6);
+      
+  var yAxis = d3.svg.axis()
+      .scale(heightScale)
+      .orient("left");
+      
+  var svg = d3.select("div")
+      .append('svg')
+      .attr('height',h)
+      .attr('width',w)
+      .style("border","2px solid black");
+  //Set Color Range
+  var color = d3.scale.ordinal()
+              .range(["rgb(152,171,197)","rgb(138,137,166)","rgb(123,104,136)","rgb(107,72,107)","rgb(160,93,86)",rgb(208,, 116, 60)", "rgb(255, 140, 0)","rgb(201, 255, 0)","rgb(255, 218, 0)"]); 
+  d3.csv("food_court_filtered_data.csv",function(data)
+              {
+                  //Scale-Domain
+                  widthScale.domain([0,d3.max(data,function(d){  return +d.Gross_sales})]);
+                  
+                  //Height Scale-Domain
+                  heightScale.domain(data.map(function(d){return d.Menu_item;}))
+                  
+                  //Add Color
+                  color.domain(data.map(function(d){return d.Store_Name}));
+                  
+                  //Sort Data
+                  data.sort(function(a,b)
+                  {
+                      return d3.descending(+a.Gross_sales, +b.Gross_sales);
+                  }
+                  )
+                  var rect = svg.selectAll('rect')
+                                  .data(data)
+                                  .enter()
+                                  .append('rect')
+                  //Set property of each bar
+                  rect.attr('x',padding[3])
+                  rect.attr('y',function(d,i)
+                           {
+                                return heightScale(d.Menu_item);
+                           }
+                       )
+                  rect.attr('width',function(d)
+                           {
+                                return withScale(+d.Gross_sales);
+                           }
+                       )
+                  rect.attr('height',data.length - barPadding)
+                  rect.attr("fill", function(d,i)
+                             {
+                               return color(d.Store_Name);
+                             }
+                           )
+                  svg.append("g")
+                       .attr("class","x axis")
+                       .attr("transform","translate(" + padding[3] + "," + (h- padding[2] + ")")
+                  svg.append("g")
+                       .attr("class","y axis")
+                       .attr("transform","translate(" + (padding[3]-5+",0)")
+                       .call(yAxis);
+                  //Graph label
+                  svg.append("text")
+                       .attr("x", padding[3] + 100)
+                       .attr("y", padding[0])
+                       .style("font-size", "20px")
+                       .style("text-decoration", "underline")
+                       .text("Product Gross Sales by Store");
+                  
+                  //Legend
+                  var legend = svg.selectAll(".legend")
+                                  .data(color.domain().slice())
+                                  .enter()
+                                  .append("g")
+                                  .attr("class","legend")
+                                  .attr("transform",function(d,i)
+                                          {
+                                              return "translate(0," + i*20+")";
+                                          }
+                                          );
+                  legend.append("rect")
+                          .attr("x", w-30)
+                          .attr("y", padding[3])
+                          .attr("width", 18)
+                          .attr("height", 18)
+                          .style("fill",color);
+                  legend.append("text")
+                      .attr("x", w-36)
+                      .attr("y", padding[3])
+                      .attr("dy", ".80em")
+                      .style("font-family", "sans-serif")
+                      .style("font-size", "15px")
+                      .style("text-anchor", "end")
+                      .text(function(d)
+                               {
+                                    return d;
+                               }
+                           );
+              }
+          );
+</script>
+
+<body>
+</html>
