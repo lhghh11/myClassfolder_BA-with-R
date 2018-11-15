@@ -65,7 +65,7 @@ svg{
                                 return withScale(+d.Gross_sales);
                            }
                        )
-                  rect.attr('height',heightScale.rangeBand());
+                  rect.attr('height',heightScale.rangeBand())
               }
           );
 </script>
