@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Minke_Li-D3 Viz</title>
+<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+<style type="text/css">
+
+body{
+     background-color:lightgrey; <!-- Use LIGHTGREY color -->
+    }
+svg{
+     background-color:white; <!-- Use WHITE color -->
+    }
+</style>
+
+</head>
+<body>
+
+<!-- Add a division, center alighed-->
+
+<div align="center"></div>
+
+<!-- Add SVG File -->
+<script type="text/javascript">
+  var w = 800;
+  var h = 600;
+  var widthScale = d3.scale.linear()
+                      .range([0,w]);
+  var svg = d3.select("div")
+      .append('svg')
+      .attr('height',h)
+      .attr('width',w)
+      .style("border","2px solid black");
+  d3.csv("food_court_filtered_data.csv",function(data)
+              {
+                  //Scale-Domain
+                  widthScale.domain([0,d3.max(data,function(d){  return +d.Gross_sales})]);
+                  
+                  //Sort Data
+                  data.sort(function(a,b)
+                  {
+                      return d3.descending(+a.Gross_sales, +b.Gross_sales);
+                  }
+                  )
+                  var rect = svg.selectAll('rect')
+                                  .data(data)
+                                  .enter()
+                                  .append('rect')
+                  //Set property of each bar
+                  rect.attr('x',0)
+                  rect.attr('y',function(d,i)
+                           {
+                                return i*10;
+                           }
+                       )
+                  rect.attr('width',function(d)
+                           {
+                                return withScale(+d.Gross_sales);
+                           }
+                       )
+                  rect.attr('height',8);
+              }
+          );
+</script>
+
+<body>
+</html>
