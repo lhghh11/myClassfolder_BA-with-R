@@ -59,7 +59,7 @@ svg{
                                 return withScale(+d.Gross_sales);
                            }
                        )
-                  rect.attr('height',8);
+                  rect.attr('height',8)
               }
           );
 </script>
