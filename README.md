@@ -1,2 +1,2 @@
-# myClassfolder_BA-with-R
+# myClassfolder
 Notes, example codes, projects, HWs, and etc.
