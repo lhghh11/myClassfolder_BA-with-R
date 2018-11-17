@@ -56,7 +56,7 @@ svg{
                        )
                   rect.attr('width',function(d)
                            {
-                                return withScale(+d.Gross_sales);
+                                return widthScale(+d.Gross_sales);
                            }
                        )
                   rect.attr('height',8)
