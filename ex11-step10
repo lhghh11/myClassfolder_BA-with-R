@@ -56,7 +56,7 @@ svg{
       .style("border","2px solid black");
   //Set Color Range
   var color = d3.scale.ordinal()
-              .range(["rgb(152,171,197)","rgb(138,137,166)","rgb(123,104,136)","rgb(107,72,107)","rgb(160,93,86)",rgb(208,, 116, 60)", "rgb(255, 140, 0)","rgb(201, 255, 0)","rgb(255, 218, 0)"]); 
+              .range(["rgb(152,171,197)","rgb(138,137,166)","rgb(123,104,136)","rgb(107,72,107)","rgb(160,93,86)","rgb(208,, 116, 60)", "rgb(255, 140, 0)","rgb(201, 255, 0)","rgb(255, 218, 0)"]); 
   d3.csv("food_court_filtered_data.csv",function(data)
               {
                   //Scale-Domain
@@ -87,7 +87,7 @@ svg{
                        )
                   rect.attr('width',function(d)
                            {
-                                return withScale(+d.Gross_sales);
+                                return widthScale(+d.Gross_sales);
                            }
                        )
                   rect.attr('height',heightScale.rangeBand())
@@ -98,10 +98,10 @@ svg{
                            )
                   svg.append("g")
                        .attr("class","x axis")
-                       .attr("transform","translate(" + padding[3] + "," + (h- padding[2] + ")")
+                       .attr("transform","translate(" + padding[3] + "," + (h- padding[2] + ")"))
                   svg.append("g")
                        .attr("class","y axis")
-                       .attr("transform","translate(" + (padding[3]-5+",0)")
+                       .attr("transform","translate(" + (padding[3]-5+",0)"))
                        .call(yAxis);
               }
           );
