@@ -45,6 +45,9 @@ function reSortRoot(root,value_key)
         root.key = "Food Court Data";
         root.values = nested_data;
         console.log(root);
+        //Change the key names and children values from .next and add values for a chosen column to define the size of the blocks
+        root = reSortRoot(root,"Net_Sales");
+        console.log(root);
 });
 </script>
 </body>
