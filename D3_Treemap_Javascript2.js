@@ -107,7 +107,7 @@ function display(d){
                    return "textdiv_s";
                    }
                 if(((d.dy >= 25 && d.dx <= 50) && d.dx >25)             ||
-                   (d.dy > 25 && (d.dx > 25)  && d.dx <=50))            ||
+                   (d.dy > 25 && (d.dx > 25   && d.dx <=50))            ||
                    ((d.dy > 50 && d.dx <= 75)  && d.dx >50)             ||
                    (d.dy > 50 &&(d.dx > 50 && d.dx <=75))
                    ){
@@ -175,5 +175,5 @@ function layout(d){
 
 //This function is used to prepare the text at the header of the treemap
 function name(d){
-    return d.parent ? name(d.parent) +"." d.name : d.name;
+    return d.parent ? name(d.parent) +"." + d.name : d.name;
 }   
