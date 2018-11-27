@@ -184,3 +184,4 @@ function layout(d){
 //This function is used to prepare the text at the header of the treemap
 function name(d){
     return d.parent ? name(d.parent) +"." d.name : d.name;
+}
