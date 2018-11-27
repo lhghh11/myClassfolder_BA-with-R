@@ -37,7 +37,7 @@ function reSortRoot(root,value_key)
         //Add, remove or change the key values to change the hierarchy.
            var nested_data = d3.nest()
                     .key(function(d) { return d.Store_name;})
-                    .key(function(d) { return d.Menu Item;})
+                    .key(function(d) { return d.Menu_Item;})
                     .entries(data);
                     console.log(nested_data);
         //Create the root node for the treemap
