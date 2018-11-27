@@ -1,0 +1,36 @@
+// Text font within the rectangle
+.textdiv {
+    font-weight:bold;
+    font-size: 25px;
+    text-align: center;
+    <!-- x-small;-->
+    padding: 25px;
+    font-family: "Times new roman","Open Sans", Helvetiva, Arial, sans-serif;
+    }
+    
+.textdiv_s{
+    font-weight:bold;
+    font-size: 9px;
+    text-align:center;
+    <!--x-small;-->
+    padding: 25px;
+    font-family:"Times new roman","Open Sans", Helvetiva, Arial, sans-serif;
+    }
+    
+.textdiv_xs{
+    font-weight:bold;
+    font-size: 7px;
+    text-align:center;
+    <!--x-small;-->
+    padding: 25px;
+    font-family:"Times new roman","Open Sans", Helvetiva, Arial, sans-serif;
+    }    
+    
+.textdiv_m{
+    font-weight:bold;
+    font-size: 13px;
+    text-align:center;
+    <!--x-small;-->
+    padding: 25px;
+    font-family:"Times new roman","Open Sans", Helvetiva, Arial, sans-serif;
+    }    
