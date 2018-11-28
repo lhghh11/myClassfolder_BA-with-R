@@ -57,6 +57,7 @@ function reSortRoot(root,value_key)
                                      nested_data[6].name, nested_data[7].name, nested_data[8].name]
                             .range(["#b7fdc7", "#e4fdb7", "#b6dcfc", "#ffd9e7", "#fdd9ac",
                                     "#clc6fd", "#fdb8b3", "#bffafd", "#fbc2fc"]);
+        colorcode(colorScale);                  
         //Manipulation to be done on the data
         loadData(root);
 });
