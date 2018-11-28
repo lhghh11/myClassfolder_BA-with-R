@@ -171,6 +171,7 @@ function layout(d){
         .attr("height", function(d) { return y(d.y + d.dy) - y(d.y);})
         .style("fill", function(d){
           return d.children ? data_colorScale(d.parent.name): "green";
+    })
         .attr("stroke", "white");
  }
  
