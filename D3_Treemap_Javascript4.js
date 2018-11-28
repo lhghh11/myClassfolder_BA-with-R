@@ -94,7 +94,7 @@ function display(d){
     .attr("y",height+5)
     .attr("width",180)
     .attr("height",100)
-    .style("fill",data_colorScale;
+    .style("fill",data_colorScale);
     
     legend.append("text")
     .attr("x",125)
