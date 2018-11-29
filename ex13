@@ -20,7 +20,7 @@ function reSortRoot(root,value_key)
          root.name = root.key;
          delete root.key;
          }
-      if(key == "value"){
+      if(key == "values"){
          root.children = [];
          for(item in root.values){
              root.children.push(reSortRoot(root.values[item],value_key));
