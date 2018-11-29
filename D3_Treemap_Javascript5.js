@@ -172,8 +172,8 @@ function display(d){
        //Transition to the new view.
                g2.selectAll("rect").call(rect);
                g2.append("foreignObject")
-                    .cell(rect)
-                    .sttr("class","foreignobj")
+                    .call(rect)
+                    .attr("class","foreignobj")
                     .append("xhtml:div")
                     .html(function(d){
                                     if(d.children){return d.name;}
